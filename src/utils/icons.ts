@@ -1,6 +1,6 @@
 export const skills = [
-  { name: "HTML5", icon: "/icons/html5.svg" },
-  { name: "CSS3", icon: "/icons/css3.svg" },
+  { name: "HTML", icon: "/icons/html5.svg" },
+  { name: "CSS", icon: "/icons/css3.svg" },
   { name: "JavaScript", icon: "/icons/javascript.svg" },
   { name: "TypeScript", icon: "/icons/typescript.svg" },
   { name: "React", icon: "/icons/react.svg" },
@@ -11,6 +11,7 @@ export const skills = [
 
   { name: "Node.js", icon: "/icons/node.svg" },
   { name: "Express", icon: "/icons/express.svg" },
+  { name: "trpc", icon: "/icons/trpc.svg" },
   { name: "Python", icon: "/icons/python.svg" },
 
   { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
@@ -22,7 +23,7 @@ export const skills = [
   { name: "Git", icon: "/icons/git.svg" },
   { name: "GitHub", icon: "/icons/github.svg" },
   { name: "Postman", icon: "/icons/postman.svg" },
-  { name: "Swagger", icon: "/icons/swagger.svg" },
+  // { name: "Swagger", icon: "/icons/swagger.svg" },
   { name: "AWS", icon: "/icons/aws.svg" },
   { name: "Docker", icon: "/icons/docker.svg" },
   { name: "Vercel", icon: "/icons/vercel.svg" },

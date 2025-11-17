@@ -65,9 +65,7 @@ export default function Skills() {
             </div>
 
             {/* LABEL */}
-            <span className="text-xs sm:text-sm group-hover:text-[#60a5fa] transition-colors duration-200">
-              {skill.name}
-            </span>
+            <span className="text-xs sm:text-sm">{skill.name}</span>
           </motion.div>
         ))}
       </motion.div>

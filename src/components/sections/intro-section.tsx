@@ -11,10 +11,9 @@ export default function IntroSection() {
   const intervalRef = useRef<number | null>(null);
 
   const texts = [
+    "Full Stack Developer",
     "Software Engineer",
-    "Product Builder",
     "Problem Solver",
-    "Creative Developer",
     "Tech Enthusiast",
   ];
 

@@ -10,7 +10,7 @@ const AnimatedLine = () => {
       transition={{ duration: 0.3, delay: 0.4 }}
     >
       <motion.hr
-        className="h-0.5 bg-white/30"
+        className="h-0.5 bg-muted-foreground/70"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ duration: 1.8, ease: "easeOut" }}
