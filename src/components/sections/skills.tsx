@@ -11,7 +11,7 @@ export default function Skills() {
       transition={{ duration: 0.4, delay: 1.1 }}
     >
       <motion.h1
-        className="text-xl sm:text-2xl font-bold font-signika"
+        className="text-xl sm:text-2xl font-bold font-signika text-foreground"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 1.2 }}
@@ -36,24 +36,17 @@ export default function Skills() {
       >
         {skills.map((skill, index) => (
           <motion.div
-            key={`skill-${index}`}
-            className="group flex items-center gap-1 sm:gap-2 border border-white/10 rounded-md 
-                 p-1.5 sm:p-2 cursor-pointer hover:bg-white/10 transition-colors"
-            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+            key={skill.name}
+            className="group flex items-center gap-1 sm:gap-2 border border-border rounded-md 
+                       p-1.5 sm:p-2 cursor-pointer hover:bg-accent transition-colors"
+            initial={{ opacity: 0, y: 20, scale: 1 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{
               duration: 0.3,
               delay: 1.3 + index * 0.03,
-              ease: "easeOut",
-            }}
-            whileHover={{
-              scale: 1.08,
-              y: -3,
-              boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
-              borderColor: "#60a5fa",
             }}
           >
-            {/* ICON — grayscale until badge hover */}
+            {/* ICON — grayscale until hover */}
             <div className="w-5 h-5 grayscale group-hover:grayscale-0 transition-all duration-300">
               <Image
                 src={skill.icon}
@@ -65,7 +58,9 @@ export default function Skills() {
             </div>
 
             {/* LABEL */}
-            <span className="text-xs sm:text-sm">{skill.name}</span>
+            <span className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+              {skill.name}
+            </span>
           </motion.div>
         ))}
       </motion.div>

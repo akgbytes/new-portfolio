@@ -2,37 +2,7 @@
 
 import { motion } from "motion/react";
 import { Briefcase, CalendarDays, Dot } from "lucide-react";
-
-const ExperienceArray = [
-  {
-    company: "AgentProd",
-    link: "https://agentprod.com",
-    position: "Full-Stack Software Engineer",
-    location: "Remote",
-    date: "Jun 2024 - Sept 2025",
-    description: [
-      "Leading feature development in a fast-paced startup environment, shipping production code that increased user engagement by 25%",
-      "Built scalable backend systems with FastAPI and PostgreSQL, reducing API latency by 40%",
-      "Accelerated deployment cycles from 3 days to <12 hours through CI/CD automation with Docker and AWS",
-      "Maintaining 99.9% uptime while improving page load speeds by 35%",
-    ],
-    techStack: "FastAPI, PostgreSQL, Docker, AWS, React, Next.js",
-  },
-  {
-    company: "Freelance",
-    link: "#",
-    position: "Full-Stack Developer",
-    location: "Remote",
-    date: "Jan 2023 - May 2024",
-    description: [
-      "Delivered 10+ production applications for international clients across E-commerce, SaaS, and portfolio domains",
-      "Built custom CMS solutions and REST APIs that reduced client maintenance costs by 30%",
-      "Specialized in React, Next.js, Node.js, and TypeScript with a 95% client retention rate",
-      "Managed complete project lifecycles remotely, from requirements to deployment",
-    ],
-    techStack: "Next.js, Node.js, TypeScript, PostgreSQL, Tailwind CSS",
-  },
-];
+import { DATA } from "@/data";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -52,9 +22,8 @@ export default function Experience() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 2.0 }}
     >
-      {/* TITLE */}
       <motion.h1
-        className="text-xl sm:text-2xl font-bold font-signika mb-2"
+        className="text-xl sm:text-2xl font-bold font-signika text-foreground mb-2"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 2.1 }}
@@ -62,19 +31,18 @@ export default function Experience() {
         Experience
       </motion.h1>
 
-      {/* CARD LIST */}
       <motion.div
         className="flex flex-col gap-6"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {ExperienceArray.map((experience, index) => (
+        {DATA.experience.map((experience, index) => (
           <motion.div key={`exp-${index}`} whileTap={{ scale: 0.98 }}>
-            <div className="group relative overflow-hidden border border-white/20 rounded-xl p-4 sm:p-6 hover:border-white/30 transition-all duration-300">
+            <div className="group relative overflow-hidden border border-foreground/20 rounded-xl p-4 sm:p-6 hover:border-foreground/30 transition-all duration-300">
               <div className="relative flex gap-3 sm:gap-4 items-start">
                 <motion.div
-                  className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center border border-white/20"
+                  className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center border border-foreground/20"
                   whileHover={{
                     scale: 1.1,
                     rotate: 5,
@@ -89,9 +57,7 @@ export default function Experience() {
                   </motion.div>
                 </motion.div>
 
-                {/* UPDATED CONTENT SECTION */}
                 <div className="flex-1 space-y-2">
-                  {/* COMPANY NAME (Link) */}
                   <motion.a
                     href={experience.link}
                     target="_blank"
@@ -107,7 +73,7 @@ export default function Experience() {
 
                   {/* ROLE + DATE */}
                   <motion.div
-                    className="flex justify-between text-xs sm:text-sm font-medium mt-1 text-neutral-300"
+                    className="flex justify-between text-xs sm:text-sm font-medium mt-1 dark:text-neutral-300 text-neutral-600"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
@@ -116,7 +82,7 @@ export default function Experience() {
                       {experience.position}
 
                       {experience.location && (
-                        <span className="rounded bg-neutral-800 px-1.5 py-0.5 text-[10px] sm:text-xs font-normal text-zinc-200">
+                        <span className="rounded bg-neutral-600 dark:bg-neutral-800 px-1.5 py-0.5 text-[10px] sm:text-xs font-normal text-zinc-200">
                           {experience.location}
                         </span>
                       )}
@@ -159,7 +125,7 @@ export default function Experience() {
                         <Dot className="mt-0.5" size={16} />
                         <span>
                           Tech Stack:{" "}
-                          <span className="font-semibold text-neutral-200">
+                          <span className="font-semibold dark:text-neutral-200 text-neutral-700">
                             {experience.techStack}
                           </span>
                         </span>

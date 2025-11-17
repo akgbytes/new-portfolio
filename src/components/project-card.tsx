@@ -12,34 +12,28 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  IconBrandGithub,
+  IconBrandGithubFilled,
+  IconGlobe,
+  IconGlobeOff,
+  IconWorld,
+} from "@tabler/icons-react";
+import { Project } from "@/data";
 
-interface Props {
-  title: string;
-  href?: string;
-  description: string;
-  dates: string;
-  tags: readonly string[];
-  link?: string;
-  image?: string;
-  video?: string;
-  links?: readonly {
-    icon: React.ReactNode;
-    type: string;
-    href: string;
-  }[];
+interface Props extends Project {
   className?: string;
 }
 
 export function ProjectCard({
   title,
   href,
+  github,
   description,
   dates,
-  tags,
-  link,
+  technologies,
   image,
   video,
-  links,
   className,
 }: Props) {
   return (
@@ -52,12 +46,12 @@ export function ProjectCard({
     >
       <div
         className={cn(
-          "group relative overflow-hidden border border-white/20 rounded-xl transition-all duration-300 hover:border-white/30 flex flex-col h-full",
+          "group relative overflow-hidden border border-neutral-200 dark:border-white/20 rounded-xl transition-all duration-300 hover:border-white/30 flex flex-col h-full",
           className
         )}
       >
         {/* MEDIA */}
-        <Link href={href || "#"} className="block h-40 w-full overflow-hidden">
+        <Link href={href} className="block h-40 w-full overflow-hidden">
           {video && (
             <video
               src={video}
@@ -100,20 +94,20 @@ export function ProjectCard({
 
         {/* TAGS */}
         <CardContent className="px-4 pb-3">
-          {tags && tags.length > 0 && (
+          {technologies && technologies.length > 0 && (
             <motion.div
               className="flex flex-wrap gap-1"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.25 }}
             >
-              {tags.map((tag) => (
+              {technologies.map((tech) => (
                 <Badge
-                  key={tag}
-                  className="px-1 py-[1px] text-[10px]"
+                  key={tech}
+                  className="px-1 py-px text-[10px]"
                   variant="secondary"
                 >
-                  {tag}
+                  {tech}
                 </Badge>
               ))}
             </motion.div>
@@ -122,22 +116,24 @@ export function ProjectCard({
 
         {/* LINKS */}
         <CardFooter className="px-4 pb-3">
-          {links && links.length > 0 && (
-            <motion.div
-              className="flex flex-row flex-wrap items-start gap-1"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              {links.map((l, idx) => (
-                <Link href={l.href} key={idx} target="_blank">
-                  <Badge className="flex gap-2 px-2 py-1 text-[10px]">
-                    {l.icon}
-                    {l.type}
-                  </Badge>
-                </Link>
-              ))}
-            </motion.div>
-          )}
+          <motion.div
+            className="flex flex-row flex-wrap items-start gap-1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <Link href={href} target="_blank">
+              <Badge className="flex gap-2 px-2 py-1 text-[10px]">
+                <IconWorld />
+                Website
+              </Badge>
+            </Link>
+            <Link href={github} target="_blank">
+              <Badge className="flex gap-2 px-2 py-1 text-[10px]">
+                <IconBrandGithub />
+                Source
+              </Badge>
+            </Link>
+          </motion.div>
         </CardFooter>
       </div>
     </motion.div>

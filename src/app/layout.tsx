@@ -30,7 +30,7 @@ export default function RootLayout({
 
           <Navbar />
 
-          <footer className="w-full">
+          <footer className="w-full mt-10">
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
               <Footer />
             </div>
