@@ -1,7 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "motion/react";
 import { skills } from "@/utils/icons";
+import { Badge } from "../ui/badge";
 
 export default function Skills() {
   return (
@@ -37,30 +39,32 @@ export default function Skills() {
         {skills.map((skill, index) => (
           <motion.div
             key={skill.name}
-            className="group flex items-center gap-1 sm:gap-2 border border-border rounded-md 
-                       p-1.5 sm:p-2 cursor-pointer hover:bg-accent transition-colors"
-            initial={{ opacity: 0, y: 20, scale: 1 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
+            className="group"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.3,
               delay: 1.3 + index * 0.03,
             }}
           >
-            {/* ICON — grayscale until hover */}
-            <div className="w-5 h-5 grayscale group-hover:grayscale-0 transition-all duration-300">
+            <Badge
+              variant="secondary"
+              className="
+                flex items-center gap-2 px-3 py-1.5 text-xs hover:dark:bg-neutral-900/90 rounded-full border dark:border-neutral-700 dark:text-neutral-200 cursor-pointer dark:bg-neutral-800/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+            >
               <Image
                 src={skill.icon}
                 alt={skill.name}
-                width={20}
-                height={20}
-                className="object-contain"
+                width={16}
+                height={16}
+                className="grayscale group-hover:grayscale-0 transition-all duration-300
+                "
               />
-            </div>
 
-            {/* LABEL */}
-            <span className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-              {skill.name}
-            </span>
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                {skill.name}
+              </span>
+            </Badge>
           </motion.div>
         ))}
       </motion.div>
