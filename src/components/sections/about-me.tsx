@@ -26,39 +26,41 @@ function AboutMe() {
         transition={{ duration: 0.3, delay: 0.75 }}
       >
         I&apos;m Aman, a{" "}
-        <span className="text-foreground font-medium">
+        <span className="text-foreground/90 font-medium">
           full stack developer
         </span>{" "}
         who loves building{" "}
-        <span className="text-foreground font-medium">
+        <span className="text-foreground/90 font-medium">
           thoughtful, scalable, and clean
         </span>{" "}
         digital experiences. With experience across{" "}
-        <span className="text-foreground font-medium">
+        <span className="text-foreground/90 font-medium">
           frontend, backend, and cloud systems
         </span>
         , I enjoy turning ideas into{" "}
-        <span className="text-foreground font-medium">
+        <span className="text-foreground/90 font-medium">
           reliable, production-ready products
         </span>
         .
         <br />
         <br />I care about writing code that&apos;s{" "}
-        <span className="text-foreground font-medium">
+        <span className="text-foreground/90 font-medium">
           simple when it can be
         </span>
         ,{" "}
-        <span className="text-foreground font-medium">
+        <span className="text-foreground/90 font-medium">
           efficient when it must be
         </span>
         , and{" "}
         <span className="text-primary font-medium">always maintainable</span>.
         Outside of shipping features, I&apos;m usually{" "}
-        <span className="text-foreground font-medium">exploring new tools</span>
+        <span className="text-foreground/90 font-medium">
+          exploring new tools
+        </span>
         , contributing to{" "}
-        <span className="text-foreground font-medium">open source</span>, or
+        <span className="text-foreground/90 font-medium">open source</span>, or
         deepening my understanding of{" "}
-        <span className="text-foreground font-medium">
+        <span className="text-foreground/90 font-medium">
           system design and performance
         </span>
         .

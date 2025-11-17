@@ -90,7 +90,7 @@ export default function IntroSection() {
 
             {/* animated subtitle */}
             <motion.p
-              className="text-white/70 text-sm sm:text-base relative h-6 overflow-hidden"
+              className="text-foreground/70 text-sm sm:text-base relative h-6 overflow-hidden"
               aria-live="polite"
               aria-atomic="true"
               initial={{ opacity: 0, y: 10 }}
@@ -125,11 +125,11 @@ export default function IntroSection() {
             rel="noopener noreferrer"
           >
             <div
-              className="text-sm sm:text-md text-white/70 font-semibold sm:flex hidden relative"
+              className="text-sm sm:text-md text-foreground/70 font-semibold sm:flex hidden relative"
               aria-hidden={false}
             >
               <span>Hiring? View my CV</span>
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-center" />
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-neutral-400 dark:bg-neutral-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-center" />
             </div>
           </Link>
         </motion.div>
