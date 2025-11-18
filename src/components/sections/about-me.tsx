@@ -1,8 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Badge } from "../ui/badge";
+import Image from "next/image";
+import { aboutSkills } from "@/utils/icons";
+import { useTheme } from "next-themes";
 
 function AboutMe() {
+  const { theme } = useTheme();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -27,51 +32,62 @@ function AboutMe() {
       >
         I&apos;m Aman, a{" "}
         <span className="text-foreground/90 font-medium">
-          full stack developer
+          full stack web developer
         </span>{" "}
-        who loves building{" "}
-        <span className="text-foreground/90 font-medium">
-          thoughtful, scalable, and clean
-        </span>{" "}
-        digital experiences. With experience across{" "}
-        <span className="text-foreground/90 font-medium">
-          frontend, backend, and cloud systems
+        who enjoys building interactive and scalable web apps using using{" "}
+        <span className="inline-flex flex-wrap items-center gap-2 align-middle">
+          {aboutSkills.map((skill) => (
+            <Badge
+              key={skill.name}
+              variant="secondary"
+              className="group flex items-center gap-2 px-3 py-1.5 text-xs hover:dark:bg-neutral-900/90 rounded-full border border-dashed border-black/20 skill-inner-shadow dark:border-neutral-700 dark:text-neutral-200 cursor-pointer dark:bg-neutral-800/20"
+            >
+              <Image
+                src={theme === "dark" ? skill.dark : skill.light}
+                alt={skill.name}
+                width={16}
+                height={16}
+                className="grayscale group-hover:grayscale-0 transition-all duration-300"
+              />
+
+              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                {skill.name}
+              </span>
+            </Badge>
+          ))}
         </span>
-        , I enjoy turning ideas into{" "}
+        <br />I work comfortably across the stack, but I&apos;m especially
+        interested in{" "}
         <span className="text-foreground/90 font-medium">
-          reliable, production-ready products
+          backend engineering
+        </span>{" "}
+        where I focus on{" "}
+        <span className="text-foreground/90 font-medium">
+          API design, data structures, and system architecture
         </span>
         .
         <br />
-        <br />I care about writing code that&apos;s{" "}
-        <span className="text-foreground/90 font-medium">
-          simple when it can be
-        </span>
-        ,{" "}
-        <span className="text-foreground/90 font-medium">
-          efficient when it must be
-        </span>
-        , and{" "}
-        <span className="text-primary font-medium">always maintainable</span>.
+        <br />
         Outside of shipping features, I&apos;m usually{" "}
         <span className="text-foreground/90 font-medium">
           exploring new tools
         </span>
-        , contributing to{" "}
-        <span className="text-foreground/90 font-medium">open source</span>, or
-        deepening my understanding of{" "}
+        , learning more about{" "}
         <span className="text-foreground/90 font-medium">
-          system design and performance
+          distributed systems
+        </span>
+        , or experimenting with ideas that help me think deeper about{" "}
+        <span className="text-foreground/90 font-medium">
+          performance and developer experience
         </span>
         .
-        <br />
-        <br />
+        {/* <br />
         Recently, I&apos;ve been working on{" "}
         <strong className="text-primary font-semibold">Flowkit</strong>, an
         automation tool that helps users build visual workflows without writing
         everything manually. I&apos;m also exploring{" "}
         <strong className="text-primary font-semibold">GenAI</strong> and
-        learning to integrate intelligent features into the products I create.
+        learning to integrate intelligent features into the products I create. */}
       </motion.p>
     </motion.div>
   );
