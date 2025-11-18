@@ -23,7 +23,7 @@ export default function Experience() {
       transition={{ duration: 0.4, delay: 2.0 }}
     >
       <motion.h1
-        className="text-xl sm:text-2xl font-bold font-signika text-foreground mb-2"
+        className="text-xl sm:text-2xl font-bold text-foreground mb-2"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 2.1 }}

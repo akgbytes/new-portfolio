@@ -13,7 +13,7 @@ export default function Skills() {
       transition={{ duration: 0.4, delay: 1.1 }}
     >
       <motion.h1
-        className="text-xl sm:text-2xl font-bold font-signika text-foreground"
+        className="text-xl sm:text-2xl font-bold text-foreground"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3, delay: 1.2 }}

@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
-import { motion, Variants } from "motion/react";
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 export default function IntroSection() {
-  const [isHovered, setIsHovered] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalRef = useRef<number | null>(null);
 
   const texts = [
     "Full Stack Developer",
@@ -17,30 +15,14 @@ export default function IntroSection() {
     "Tech Enthusiast",
   ];
 
-  // carousel logic, only runs while hovered
+  // Auto-rotate subtitles every 2s
   useEffect(() => {
-    // Clear any existing interval
-    if (intervalRef.current) {
-      window.clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % texts.length);
+    }, 2000);
 
-    if (isHovered) {
-      intervalRef.current = window.setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % texts.length);
-      }, 1500);
-    } else {
-      // reset to first item when not hovered
-      setCurrentIndex(0);
-    }
-
-    return () => {
-      if (intervalRef.current) {
-        window.clearInterval(intervalRef.current);
-        intervalRef.current = null;
-      }
-    };
-  }, [isHovered]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <motion.div
@@ -48,13 +30,10 @@ export default function IntroSection() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocus={() => setIsHovered(true)}
-      onBlur={() => setIsHovered(false)}
     >
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
         <div className="flex items-center gap-3 sm:gap-4">
+          {/* Profile photo*/}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -67,12 +46,13 @@ export default function IntroSection() {
                 src="/me.jpg"
                 alt="profile photo"
                 fill
-                className="rounded-2xl border-2 border-white/20 hover:border-white/40 transition-colors duration-300 object-cover"
+                className="rounded-2xl border-2 border-border hover:border-primary/40 transition-colors duration-300 object-cover"
                 priority
               />
             </div>
           </motion.div>
 
+          {/* Text Section */}
           <motion.div
             className="cursor-default pr-0 sm:pr-20"
             initial={{ opacity: 0, y: 10 }}
@@ -80,7 +60,7 @@ export default function IntroSection() {
             transition={{ duration: 0.4, delay: 0.15 }}
           >
             <motion.h1
-              className="text-xl sm:text-2xl font-bold"
+              className="text-xl sm:text-2xl font-bold text-foreground"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
@@ -88,14 +68,11 @@ export default function IntroSection() {
               Hello, I&apos;m Aman
             </motion.h1>
 
-            {/* animated subtitle */}
+            {/* Auto rotating subtitle */}
             <motion.p
-              className="text-foreground/70 text-sm sm:text-base relative h-6 overflow-hidden"
+              className="text-muted-foreground text-sm sm:text-base relative h-6 overflow-hidden"
               aria-live="polite"
               aria-atomic="true"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.25 }}
             >
               <motion.span
                 key={currentIndex}
@@ -111,26 +88,24 @@ export default function IntroSection() {
           </motion.div>
         </div>
 
+        {/* Resume Link */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="group"
+          whileHover={{ x: 2 }}
+          className="sm:flex hidden"
         >
           <Link
             href="https://drive.google.com/file/d/1Bd8AEiYk9OyTV6Oe0UqGDjuLKLjZcqcK/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-1.5 text-sm sm:text-md font-semibold text-foreground/70 hover:text-foreground transition-colors"
           >
-            <div
-              className="text-sm sm:text-md text-foreground/70 font-semibold sm:flex hidden relative"
-              aria-hidden={false}
-            >
-              <span>Hiring? View my CV</span>
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-neutral-400 dark:bg-neutral-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-center" />
-            </div>
+            <span>Hiring? View my CV</span>
+
+            {/* Underline effect */}
+            <span className="absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary/60 dark:bg-neutral-100 group-hover:w-full transition-all duration-600 ease-out -translate-x-1/2" />
           </Link>
         </motion.div>
       </div>
