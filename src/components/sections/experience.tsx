@@ -39,7 +39,7 @@ export default function Experience() {
       >
         {DATA.experience.map((experience, index) => (
           <motion.div key={`exp-${index}`} whileTap={{ scale: 0.98 }}>
-            <div className="group relative overflow-hidden border border-foreground/20 rounded-xl p-4 sm:p-6 hover:border-foreground/30 transition-all duration-300">
+            <div className="group relative overflow-hidden border border-dashed border-black/20  dark:border-neutral-700 rounded-xl p-4 sm:p-6 transition-all duration-300">
               <div className="relative flex gap-3 sm:gap-4 items-start">
                 <motion.div
                   className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center border border-foreground/20"

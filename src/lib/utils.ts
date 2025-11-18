@@ -8,8 +8,8 @@ export function cn(...inputs: ClassValue[]) {
 import { Metadata } from "next";
 
 export function constructMetadata({
-  title = "Aman Gupta | Software Engineer",
-  description = "Aman Gupta is a Software Engineer focused on building reliable, high-performance systems with clean architecture and maintainable code.",
+  title = "Aman Gupta | Full Stack Web Developer",
+  description = "Aman Gupta is a Full Stack Web Developer focused on building reliable, high-performance systems with clean architecture and maintainable code.",
   image = "/og.png",
   baseUrl = "https://www.akgbytes.com",
   keywords = [
@@ -21,7 +21,7 @@ export function constructMetadata({
     "TypeScript Developer",
     "JavaScript Developer",
     "Backend Developer",
-    "Full Stack Developer",
+    "Full Stack Web Developer",
     "Next.js",
     "React",
     "TypeScript",
@@ -96,7 +96,7 @@ export function constructMetadata({
         "@type": "Person",
         name: "Aman Gupta",
         url: baseUrl,
-        jobTitle: "Software Engineer",
+        jobTitle: "Full Stack Web Developer",
         sameAs: [
           "https://github.com/akgbytes",
           "https://www.linkedin.com/in/akgbytes",

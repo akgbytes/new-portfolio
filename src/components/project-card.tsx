@@ -46,7 +46,7 @@ export function ProjectCard({
     >
       <div
         className={cn(
-          "group relative overflow-hidden border border-neutral-200 dark:border-white/20 rounded-xl transition-all duration-300 hover:border-white/30 flex flex-col h-full",
+          "group relative overflow-hidden border border-dashed border-black/20  dark:border-neutral-700 rounded-xl transition-all duration-300 flex flex-col h-full",
           className
         )}
       >
