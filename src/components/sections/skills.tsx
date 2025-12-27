@@ -59,7 +59,7 @@ export default function Skills() {
                 alt={skill.name}
                 width={16}
                 height={16}
-                className="grayscale group-hover:grayscale-0 transition-all duration-300
+                className="transition-all duration-300
                 "
               />
 

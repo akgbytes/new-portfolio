@@ -11,7 +11,7 @@ export function constructMetadata({
   title = "Aman Gupta | Full Stack Web Developer",
   description = "Aman Gupta is a Full Stack Web Developer focused on building reliable, high-performance systems with clean architecture and maintainable code.",
   image = "/og.png",
-  baseUrl = "https://www.akgbytes.com",
+  baseUrl = "https://www.akgbytes.in",
   keywords = [
     "Aman Gupta",
     "Software Engineer",
