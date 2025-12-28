@@ -97,7 +97,7 @@ export default function IntroSection() {
           className="sm:flex hidden"
         >
           <Link
-            href="https://drive.google.com/file/d/1Bd8AEiYk9OyTV6Oe0UqGDjuLKLjZcqcK/view?usp=sharing"
+            href="https://drive.google.com/file/d/1DMyKJNmcpvgZxS1_fAXgZb3-bwhcxT2b/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-1.5 text-sm sm:text-md font-semibold text-foreground/70 hover:text-foreground transition-colors"
