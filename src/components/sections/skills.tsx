@@ -4,10 +4,8 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { skills } from "@/utils/icons";
 import { Badge } from "../ui/badge";
-import { useTheme } from "next-themes";
 
 export default function Skills() {
-  const { theme } = useTheme();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -55,7 +53,7 @@ export default function Skills() {
                 flex items-center gap-2 px-3 py-1.5 text-xs hover:dark:bg-neutral-900/90 rounded-full border border-dashed border-black/20 skill-inner-shadow dark:border-neutral-700 dark:text-neutral-200 cursor-pointer dark:bg-neutral-800/20"
             >
               <Image
-                src={theme === "dark" ? skill.dark : skill.light}
+                src={skill.icon}
                 alt={skill.name}
                 width={16}
                 height={16}

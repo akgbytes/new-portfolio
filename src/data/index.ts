@@ -110,7 +110,7 @@ export const DATA = {
       link: "#",
       position: "Backend Intern",
       location: "Jaipur, Rajasthan",
-      date: "Jun 2024 - Sept 2025",
+      date: "Nov 2024 - May 2025",
       description: [
         "Building a scalable, full-stack grocery platform enabling customers to purchase online and vendors to manage and accept orders via a dedicated platform.",
         "Developing vendor onboarding and analytics dashboards to facilitate seamless integration and performance tracking.",
