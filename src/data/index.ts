@@ -26,8 +26,8 @@ export interface Project {
 const projects: Project[] = [
   {
     title: "Secure Auth",
-    href: "https://magicui.design",
-    github: "",
+    href: "https://auth.akgbytes.in",
+    github: "https://github.com/akgbytes/secure-auth",
     dates: "Sept 2025 - Nov 2025",
     description:
       "Complete authentication system with login, registration, email verification, password reset, sessions, and role-based access.",
@@ -45,8 +45,8 @@ const projects: Project[] = [
   },
   {
     title: "Shortlistr",
-    href: "https://magicui.design",
-    github: "",
+    href: "https://shortlistr.akgbytes.in/",
+    github: "https://github.com/akgbytes/shortlistr",
     dates: "Oct 2025 - Nov 2025",
     description:
       "AI-powered resume analyzer that helps job seekers improve their resumes using ATS-based analysis and actionable feedbacks/",
@@ -63,8 +63,8 @@ const projects: Project[] = [
   },
   {
     title: "UIgnite",
-    href: "https://magicui.design",
-    github: "",
+    href: "https://uignite.in",
+    github: "https://github.com/UIgnite/UIgnite",
     dates: "April 2025 - June 2025",
     description:
       "Designed, developed and sold animated UI components for developers.",
