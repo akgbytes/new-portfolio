@@ -63,8 +63,7 @@ export default function IntroSection() {
           className="group"
         >
           <Link
-            href="https://drive.google.com/file/d/1Bd8AEiYk9OyTV6Oe0UqGDjuLKLjZcqcK/view?usp=sharing"
-            target="_blank"
+            href="https://drive.google.com/file/d/1BMwogcyXQ7TC862HFgbmDbMdAcyYBU86/view?usp=sharing
             rel="noopener noreferrer"
           >
             <div className="text-sm sm:text-md text-white/70 font-semibold sm:flex hidden relative">
