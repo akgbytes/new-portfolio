@@ -106,17 +106,30 @@ export const DATA = {
 
   experience: [
     {
+      company: "Urbanesta",
+      link: "#",
+      position: "Full Stack Engineer",
+      location: "Gurgaon, Haryana",
+      date: "Feb 2026 - Present",
+      description: [
+        "Worked on admin platform and built the core API layer using Node.js, Express, and tRPC, and designed MongoDB schemas to manage complex real estate data including multi-phase projects, stakeholders, and geographic hierarchies.",
+        "Designed and implemented a granular RBAC system enabling fine-grained permissions across modules like project management, pricing, leads, and SEO data.",
+        "Built an optimized image processing pipeline using Sharp to convert uploads to WebP and reduce file size, improving bandwidth efficiency and load performance",
+      ],
+      techStack: "Node.js, tRPC, MongoDB, Redis, React, React Query",
+    },
+     {
       company: "ROS",
       link: "#",
-      position: "Backend Intern",
+      position: "Backend Developer",
       location: "Jaipur, Rajasthan",
-      date: "Nov 2024 - May 2025",
+      date: "Nov 2024 - Jan 2026",
       description: [
-        "Building a scalable, full-stack grocery platform enabling customers to purchase online and vendors to manage and accept orders via a dedicated platform.",
-        "Developing vendor onboarding and analytics dashboards to facilitate seamless integration and performance tracking.",
-        "Integrated Twilio for SMS verification and user authentication, enhancing security and streamlining login and account recovery processes.",
+        "Developed backend APIs for a grocery ordering platform, enabling seamless order placement for customers and order management for vendors.",
+        "Implemented vendor onboarding workflows and analytics APIs, providing actionable insights and performance tracking for vendor growth.",
+        "Integrated Twilio-based SMS OTP authentication to enhance security across login, signup, and account recovery flows.",
       ],
-      techStack: "FastAPI, PostgreSQL, Docker, AWS, React, Next.js",
+      techStack: "Node.js, Express, PostgreSQL, Drizzle, Docker, AWS, React, Next.js",
     },
   ],
 
