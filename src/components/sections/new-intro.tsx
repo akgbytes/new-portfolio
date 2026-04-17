@@ -63,8 +63,9 @@ export default function IntroSection() {
           className="group"
         >
           <Link
-            href="https://drive.google.com/file/d/1BMwogcyXQ7TC862HFgbmDbMdAcyYBU86/view?usp=sharing
+            href="https://drive.google.com/file/d/1BMwogcyXQ7TC862HFgbmDbMdAcyYBU86/view?usp=sharing"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <div className="text-sm sm:text-md text-white/70 font-semibold sm:flex hidden relative">
               <span>Hiring? View my CV</span>
